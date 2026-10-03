@@ -1,12 +1,12 @@
 # PROJECT BRAIN: Payment Catcher
 
 **Path:** D:\Work\AI Projects\Payment Catcher
-**Repo:** https://github.com/jamesbaroniharrison-maker/Payment-Catcher.git (remote being linked 2026-10-03)
-**Status:** Experimental (Stage 1 mostly built in the working tree, **uncommitted**)
+**Repo:** https://github.com/jamesbaroniharrison-maker/Payment-Catcher.git (branch `master`)
+**Status:** Experimental (Stage 1 mostly built, committed 2026-10-03)
 **Last updated:** 2026-10-03
-**Last synced commit:** 66bfdc8
+**Last synced commit:** b06c069
 
-> Almost all of the code is uncommitted. HEAD is still "Initial commit from Create Next App". This Brain describes the **working tree** as of 2026-10-03.
+> The Stage 1 app was committed in `b06c069` on 2026-10-03. Tooling folders `.agents\`, `.windsurf\`, `.claude\` and `skills-lock.json` are deliberately untracked.
 
 ## 1. Summary
 A SaaS app that recovers failed subscription payments for Skool community owners. A creator connects their Stripe account. A per-connection webhook catches `payment failed` events and classifies the decline code into retry-now vs wait-and-email, then runs a day1/day3/final recovery email sequence with retries. Recovered revenue is counted, and on the 1st of each month the creator is billed **20% of what was recovered**. Plan and rationale: `full-build-breakdown.md` (Stage 1: 9 pieces; Stage 2: 8 extras).
@@ -79,11 +79,12 @@ All of `src\lib\`, API routes, Prisma schema and migrations, dashboard.
 1. `npm install`; fill `.env`. 2. `npx prisma migrate deploy`. 3. Set up Stripe Connect and create a test connected account. 4. Use `stripe trigger invoice.payment_failed` against the connection's webhook. 5. Call both cron routes by hand with `CRON_SECRET`. 6. Deploy to Vercel.
 
 ## 10. Known Issues, Gotchas & Lessons Learned
-- **Nothing beyond the scaffold is committed.** A remote is being linked (see Repo), but a push only sends committed work, so the app code (`src\`, `prisma\`, etc.) stays local-only until it is committed.
-- `.gitignore` working-tree change adds `/src/generated/prisma` (generated client); not yet committed.
+- `.gitignore` ignores `/src/generated/prisma` (generated client); run `npx prisma generate` after cloning.
+- `.claude\` is untracked, not ignored (only `settings.local.json` is in `.gitignore`); don't `git add .` blindly.
 - Next.js 16 / Auth.js v5 beta / Prisma 7 are all newer than most training data, so check `node_modules` docs.
 - Prisma CLI doesn't auto-load `.env`; `prisma.config.ts` handles it.
 
 ## 11. Changelog
 - 2026-10-03 | cf407c6 | First Brain, describing the uncommitted working tree.
+- 2026-10-03 | b06c069 | Stage 1 app committed and pushed to GitHub; Status/Repo/Known Issues updated. No asset changes; paths re-verified.
 - 2026-10-03 | 66bfdc8 | Repo set to the GitHub URL. No code changes since last sync. All paths in Sections 3-8 re-verified, none missing.
