@@ -64,7 +64,7 @@ No LLM prompts in this project.
 ## 9. Client Transfer Playbook
 (A SaaS product, not a per-client build. "Transfer" means selling or handing over the codebase.)
 ### 9a. REMOVE
-`PROJECT_BRAIN.md`, `.claude\commands\brain-sync.md`, `.claude\settings.local.json`, the Brain line in `CLAUDE.md`; `.env`; `.windsurf\`, `.agents\`, `skills-lock.json` (tooling); grep `James`, `D:\\Work`. Git history is just the Next.js scaffold, so it's safe.
+`PROJECT_BRAIN.md`, `.claude\commands\brain-sync.md`, `.claude\settings.local.json`, the Brain line in `CLAUDE.md`; `.env`; `.windsurf\`, `.agents\`, `skills-lock.json` (tooling); grep `James`, `D:\\Work`. Git history now holds the full app; a secret scan of the app commit found none, but recommend a fresh repo for a client handoff.
 ### 9b. REPLACE
 | Item | Where | Needed |
 |---|---|---|
