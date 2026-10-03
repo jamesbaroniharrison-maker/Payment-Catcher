@@ -1,10 +1,10 @@
 # PROJECT BRAIN: Payment Catcher
 
 **Path:** D:\Work\AI Projects\Payment Catcher
-**Repo:** none (local git only, no remote)
+**Repo:** https://github.com/jamesbaroniharrison-maker/Payment-Catcher.git (remote being linked 2026-10-03)
 **Status:** Experimental (Stage 1 mostly built in the working tree, **uncommitted**)
 **Last updated:** 2026-10-03
-**Last synced commit:** cf407c6
+**Last synced commit:** 66bfdc8
 
 > Almost all of the code is uncommitted. HEAD is still "Initial commit from Create Next App". This Brain describes the **working tree** as of 2026-10-03.
 
@@ -79,10 +79,11 @@ All of `src\lib\`, API routes, Prisma schema and migrations, dashboard.
 1. `npm install`; fill `.env`. 2. `npx prisma migrate deploy`. 3. Set up Stripe Connect and create a test connected account. 4. Use `stripe trigger invoice.payment_failed` against the connection's webhook. 5. Call both cron routes by hand with `CRON_SECRET`. 6. Deploy to Vercel.
 
 ## 10. Known Issues, Gotchas & Lessons Learned
-- **Nothing beyond the scaffold is committed** and there is no remote, so a disk failure loses all of it. Commit and push soon.
+- **Nothing beyond the scaffold is committed.** A remote is being linked (see Repo), but a push only sends committed work, so the app code (`src\`, `prisma\`, etc.) stays local-only until it is committed.
 - `.gitignore` working-tree change adds `/src/generated/prisma` (generated client); not yet committed.
 - Next.js 16 / Auth.js v5 beta / Prisma 7 are all newer than most training data, so check `node_modules` docs.
 - Prisma CLI doesn't auto-load `.env`; `prisma.config.ts` handles it.
 
 ## 11. Changelog
 - 2026-10-03 | cf407c6 | First Brain, describing the uncommitted working tree.
+- 2026-10-03 | 66bfdc8 | Repo set to the GitHub URL. No code changes since last sync. All paths in Sections 3-8 re-verified, none missing.
